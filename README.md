@@ -15,21 +15,22 @@ This project is a full-stack application with a backend built using FastAPI and 
    cd credit_rating/backend
    pip install -r requirements.txt
 2. **Running the Backend: Start the backend server using Uvicorn:**
-python -m uvicorn backend.app:app --reload
+      ```bash
+      python -m uvicorn backend.app:app --reload
 
-Running Tests: To run the tests, use the following command:
+3. **Running Tests: To run the tests, use the following command:**
+   ```bash
+   cd backend
+   pytest tests/
 
-cd backend
-pytest tests/
+4. **Frontend Install dependencies: Navigate to the frontend directory and install the required Node.js packages:**
+   ```bash
+      cd credit_rating/frontend
+      npm install
 
-Frontend
-Install dependencies: Navigate to the frontend directory and install the required Node.js packages:
-
-cd credit_rating/frontend
-npm install
-Running the Frontend: Start the frontend application:
-
-npm start
+5. **Running the Frontend: Start the frontend application:**
+   ```bash
+   npm start
 
 Project Structure
 Backend
