@@ -37,7 +37,7 @@ backend/app.py: Main FastAPI application file.
 
 backend/tests/: Folder containing unit and integration tests.
 
-backend/database/: Contains database connection and schema files.
+database/database/: Contains database connection and schema files.
 
 Frontend
 frontend/: Contains React app files and configurations.
