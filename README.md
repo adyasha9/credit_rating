@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/b2dba703-30e7-446e-8b0b-38f37cd49f3d
+
 # Credit Rating Project
 
 ## Description
