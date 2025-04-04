@@ -1,0 +1,194 @@
+/* MortgageList.css */
+.mortgage-list-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mortgage-list-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .table-responsive {
+    margin-top: 20px;
+  }
+  
+  .table th, .table td {
+    vertical-align: middle;
+    text-align: center;
+    color: #343a40;
+  }
+  
+  .table thead {
+    background-color: #343a40;
+    color: #fff;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  .table-bordered th, .table-bordered td {
+    border: 1px solid #ddd;
+  }
+  
+  .table-bordered th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+  }
+  
+  button {
+    font-size: 14px;
+  }
+  
+  button:hover {
+    cursor: pointer;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  .me-2 {
+    margin-right: 10px;
+  }
+  
+  .modal-content {
+    border-radius: 8px;
+  }
+  
+  .modal-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .modal-title {
+    font-size: 18px;
+  }
+  
+  .modal-body {
+    padding: 20px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  .form-group input, .form-group select {
+    width: 100%;
+    padding: 18px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .form-group input:invalid {
+    border-color: #e74a3b;
+  }
+  
+  .form-group input:focus {
+    border-color: #007bff;
+  }
+  
+  .text-muted {
+    font-size: 12px;
+  }
+  
+  .form-control-feedback {
+    color: #e74a3b;
+    font-size: 12px;
+  }
+  
+  .d-flex {
+    display: flex;
+  }
+  
+  .justify-content-end {
+    justify-content: flex-end;
+  }
+  
+  .spinner-border {
+    width: 3rem;
+    height: 3rem;
+    border-width: 0.3rem;
+  }
+  
+  .alert-info {
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    color: #0c5460;
+  }
+  
+  .alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+  }
+  
+  .alert {
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .table-responsive {
+      overflow-x: scroll;
+    }
+  
+    .table {
+      font-size: 12px;
+    }
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+  }
+  
+  .pagination li {
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .pagination li.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .pagination li:hover {
+    background-color: #ddd;
+  }
+
+.button-group {
+  display: flex;
+  justify-content: flex-end; 
+  gap: 10px; 
+  margin-top: 20px; 
+}
+
+.button-group .btn {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.button-group .btn:hover {
+  opacity: 0.9; 
+  cursor: pointer;
+}
+
+.button-group .btn:focus {
+  outline: none; 
+  box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.5); 
+}
+
