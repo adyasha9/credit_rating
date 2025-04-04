@@ -34,7 +34,7 @@ edge_case_mortgage = schema.MortgageCreate(
     property_type="condo"
 )
 
-# Test for a valid mortgage case, expecting a "BBB" rating
+# Test for a valid mortgage case, expecting a "AAA" rating
 def test_valid_credit_rating():
     rating = crud.calculate_credit_rating(
         valid_mortgage.credit_score,
@@ -47,7 +47,7 @@ def test_valid_credit_rating():
     )
     # For the given mortgage, the risk score will be calculated based on the rules.
     # It will add points for the property type (condo) and loan type (fixed rate).
-    # The final rating would likely be "BBB" for medium risk.
+    # The final rating would likely be "AAA" for medium risk.
     assert rating == "AAA"
 
 # Test for an invalid mortgage case, where loan amount is negative
