@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/b2dba703-30e7-446e-8b0b-38f37cd49f3d
+
 # Credit Rating Project
 
 ## Description
@@ -54,12 +58,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 
 This `README.md` file includes both setup instructions for the backend and frontend, project structure, and basic commands needed to run the application.
-
-
-
-
-
-
-
-
-
