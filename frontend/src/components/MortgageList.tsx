@@ -83,10 +83,34 @@ const MortgageList = () => {
   ) => {
     const { name, value } = e.target;
   
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    const numberFields = ['credit_score', 'loan_amount', 'property_value', 'annual_income', 'debt_amount'];
+  
+    if (numberFields.includes(name)) {
+      const parsedValue = parseFloat(value);
+  
+      if (parsedValue < 0) {
+        setValidationErrors({
+          ...validationErrors,
+          [name]: 'Value cannot be negative',
+        });
+        return;
+      }
+  
+      setValidationErrors({
+        ...validationErrors,
+        [name]: '',
+      });
+  
+      setFormData({
+        ...formData,
+        [name]: parsedValue,
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
   };
 
   const validateForm = () => {
@@ -99,7 +123,27 @@ const MortgageList = () => {
     if (!formData.loan_amount || Number(formData.loan_amount) <= 0) {
       errors.loan_amount = 'Loan amount must be positive';
     }
-
+  
+    if (!formData.property_value || Number(formData.property_value) <= 0) {
+      errors.property_value = 'Property value must be positive';
+    }
+  
+    if (!formData.annual_income || Number(formData.annual_income) <= 0) {
+      errors.annual_income = 'Annual income must be positive';
+    }
+  
+    if (formData.debt_amount === undefined || Number(formData.debt_amount) < 0) {
+      errors.debt_amount = 'Debt amount cannot be negative';
+    }
+  
+    if (!formData.loan_type) {
+      errors.loan_type = 'Loan type is required';
+    }
+  
+    if (!formData.property_type) {
+      errors.property_type = 'Property type is required';
+    }
+  
     setValidationErrors(errors);
     return Object.keys(errors).length === 0;
   };
@@ -196,16 +240,13 @@ const MortgageList = () => {
                     <td>{mortgage.property_type === 'single_family' ? 'Single Family' : 'Condo'}</td>
                    <td>
                       <Button 
-                        variant="primary" 
-                        size="sm" 
-                        className="me-2"
+                        className="same-size-button edit-button"
                         onClick={() => openEditModal(mortgage)}
                       >
                         Edit
                       </Button>
                       <Button 
-                        variant="danger" 
-                        size="sm"
+                        className='same-size-button delete-button'
                         onClick={() => mortgage.id !== undefined && handleDelete(mortgage.id)}
                       >
                         Delete
@@ -247,6 +288,8 @@ const MortgageList = () => {
                 value={formData.credit_score?.toString() || ""}
                 onChange={handleInputChange}
                 isInvalid={!!validationErrors.credit_score}
+                min = "300"
+                max = "850"
               />
               <Form.Control.Feedback type="invalid">
                 {validationErrors.credit_score}
@@ -264,6 +307,7 @@ const MortgageList = () => {
                 value={formData.loan_amount}
                 onChange={handleInputChange}
                 isInvalid={!!validationErrors.loan_amount}
+                min="1"
               />
               <Form.Control.Feedback type="invalid">
                 {validationErrors.loan_amount}
@@ -278,6 +322,7 @@ const MortgageList = () => {
                 value={formData.property_value}
                 onChange={handleInputChange}
                 isInvalid={!!validationErrors.property_value}
+                min="1"
               />
               <Form.Control.Feedback type="invalid">
                 {validationErrors.property_value}
@@ -292,6 +337,7 @@ const MortgageList = () => {
                 value={formData.annual_income}
                 onChange={handleInputChange}
                 isInvalid={!!validationErrors.annual_income}
+                min="1"
               />
               <Form.Control.Feedback type="invalid">
                 {validationErrors.annual_income}
@@ -306,6 +352,7 @@ const MortgageList = () => {
                 value={formData.debt_amount?.toString() || ""}
                 onChange={handleInputChange}
                 isInvalid={!!validationErrors.debt_amount}
+                min="0"
               />
               <Form.Control.Feedback type="invalid">
                 {validationErrors.debt_amount}
@@ -313,7 +360,7 @@ const MortgageList = () => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Loan Type</Form.Label>
+              <Form.Label>Loan Type</Form.Label><br/>
               <Form.Select
                 name="loan_type"
                 value={formData.loan_type}
@@ -337,10 +384,10 @@ const MortgageList = () => {
             </Form.Group>
 
             <div className="button-group">
-              <Button variant="secondary" onClick={() => setShowEditModal(false)} className="me-2">
+              <Button className = "cancel-button"   onClick={() => {setShowEditModal(false);setValidationErrors({});}}>
                 Cancel
               </Button>
-              <Button variant="primary" type="submit">
+              <Button className ="save-button" type="submit">
                 Save Changes
               </Button>
             </div>

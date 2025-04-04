@@ -37,11 +37,11 @@ function App() {
                 onSubmit={handleFormSubmit}
                 initialValues={{
                   id: 0,
-                  credit_score: 0,
+                  credit_score: 300,
                   loan_amount: 1,
                   property_value: 1,
                   annual_income: 1,
-                  debt_amount: 1,
+                  debt_amount: 0,
                   loan_type: "fixed",
                   property_type: "single_family",
                 }}

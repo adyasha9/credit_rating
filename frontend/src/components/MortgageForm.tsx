@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mortgage } from '../types/index';
+import './MortgageForm.css'
 
 interface MortgageFormProps {
   onSubmit: (mortgage: Mortgage) => void; 
