@@ -10,8 +10,7 @@ This project is a full-stack application with a backend built using FastAPI and 
 ### Backend
 
 1. **Install dependencies:**
-   - Navigate to the `backend` directory and install the necessary Python packages.[screencapture-localhost-3000-mortgages-2025-04-04-13_36_58.pdf](https://github.com/user-attachments/files/19600524/screencapture-localhost-3000-mortgages-2025-04-04-13_36_58.pdf)
-
+   - Navigate to the `backend` directory and install the necessary Python packages.
    ```bash
    cd credit_rating/backend
    pip install -r requirements.txt
@@ -55,14 +54,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 
 This `README.md` file includes both setup instructions for the backend and frontend, project structure, and basic commands needed to run the application.
-
-[screencapture-localhost-3000-add-mortgage-2025-04-04-13_36_26.pdf](https://github.com/user-attachments/files/19600536/screencapture-localhost-3000-add-mortgage-2025-04-04-13_36_26.pdf)
-
-
-
-
-
-
-
-
-[screencapture-localhost-3000-mortgages-2025-04-04-13_36_36.pdf](https://github.com/user-attachments/files/19600527/screencapture-localhost-3000-mortgages-2025-04-04-13_36_36.pdf)
